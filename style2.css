@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+    background-color: #000;
+    background-image: url('prova_10.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Time new romans', sans-serif;
+}
+
+/* Barra di navigazione */
+@keyframes rubberBand {
+    0% { transform: scale(1); }
+    30% { transform: scaleX(1.25) scaleY(0.75); }
+    40% { transform: scaleX(0.75) scaleY(1.25); }
+    50% { transform: scaleX(1.15) scaleY(0.85); }
+    65% { transform: scaleX(0.95) scaleY(1.05); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes flash {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+
+.navbar {
+    background-color: #013220; /* Colore di sfondo della barra di navigazione */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera alla barra di navigazione */
+    display: flex; /* Rende la barra di navigazione un contenitore flessibile */
+    justify-content: space-between; /* Allinea gli elementi l'uno di fronte all'altro */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    padding: 10px; /* Aggiunto padding per separare gli elementie Grandezza della barra */
+}
+
+.navbar a { /* Si riferisce a tutti i tag <a> dentro navbar */
+    color: #f2f2f2; /* Colore del testo dei link nella barra di navigazione */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    padding: 14px 16px; /* Grandezza della barra */
+    transition: background-color 0.3s; /* Aggiunge una transizione al cambio di colore al passaggio del mouse */
+}
+
+.dropdown { /* Deve avere la classe "dropdown" come elemento padre. All'interno di questo elemento "dropdown" */
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px; /* Dimensione del testo del pulsante dropdown */
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: 'Time new romans', sans-serif;
+}
+
+.dropdown .dropbtn:hover { /* Deve avere la classe "dropdown" come elemento padre. All'interno di questo elemento "dropdown", ci deve essere un elemento con la classe "dropbtn". L'utente deve passare il mouse sopra questo elemento "dropbtn". */
+    transform: scale(1.1); /* Ingrandisce il pulsante dropdown del 10% */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn { /* .navbar a:hover: Questo si riferisce a tutti gli elementi <a> che sono all'interno di un elemento con la classe "navbar" e che sono al passaggio del mouse (hover). Invece, .dropdown:hover .dropbtn riguarda l'elemento con la classe "dropbtn" che si trova all'interno di un elemento con la classe "dropdown" quando l'utente passa il mouse sopra l'intero elemento "dropdown". */
+    background-color: #ddd; /* Cambia il colore di sfondo al passaggio del mouse */
+    color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Colore di sfondo del dropdown */
+    min-width: 160px; /* Larghezza minima del dropdown */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aggiunge un'ombra al dropdown */
+    z-index: 1;
+}
+
+.user-options a {
+    position: relative;
+    color: #fff; /* Colore del testo dei link */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+}
+
+.user-options a::before { /* LO USO PER CREARE LA LINEA SOTTO ACCEDI E REGISTRATI. BEFORE PERCHÉ APPARE SOTTO? */
+    content: ''; /* Aggiunge un elemento pseudoelemento prima del testo (in sostanza fa comparire la riga) */
+    display: block;
+    height: 2px; /* Altezza della barra */
+    width: 0;
+    background-color: #fff; /* Colore della barra */
+    position: absolute;
+    bottom: -5px; /* Posiziona la barra 5px sotto il testo */
+    left: 50%; /* Posiziona orizzontalmente al centro */
+    transform: translateX(-50%); /* Centra la barra sotto il testo */
+    transition: width 0.8s ease; /* Aumentato il tempo di transizione */
+}
+
+
+
+/* Animazione al passaggio del mouse x la riga */
+.user-options a:hover::before { /* Lo uso per regolare la lunghezza della riga sotto Accedi e Registrati */
+    width: 100%; /* Larghezza uguale alla lunghezza del testo */
+}
+
+.dropdown-content a {
+    float: none;
+    color: white; /* Colore del testo dei link nel dropdown */
+    padding: 12px 16px; /* Spaziatura interna dei link nel dropdown */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd; /* Cambia il colore di sfondo al passaggio del mouse sui link nel dropdown */
+    color: black; /* Cambia il colore del testo al passaggio del mouse sui link nel dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostra il contenuto del dropdown quando l'utente passa il mouse sopra l'elemento padre "dropdown" */
+}
+
+
+/* Header */
+.info-page {
+    text-align: center;
+}
+
+.header {
+    background-color: #013220;
+    padding: 20px;
+    border-radius: 0 0 50% 50%;
+    font-family: 'Time new romans', sans-serif;
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    line-height: 60px;
+    color: #ffffff;
+    margin: 0;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    background-color: #013220;
+    border-radius: 20px;
+    
+}
+
+
+
+.title:hover {
+    animation: wobble 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Contenuto */
+.content {
+    padding: 20px;
+    text-align: center;
+    font-size: 23px;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+/* Pulsanti */
+.bottone1 {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s; /* Cambia il colore del testo al passaggio del mouse */
+}
+
+.bottone1::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.8s ease;
+}
+
+.bottone1:hover::before {
+    width: 100%;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #013220;
+    color: #fff;
+}
+
+button:hover {
+    transform: scale(1.1);
+    animation: rubberBand 1s, flash 1s;
+}
+
+
+.green-link {
+    color: #013220; /* Imposta il colore verde per i link */
+}
+
+.pulse-image:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

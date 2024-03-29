@@ -1,0 +1,261 @@
+body {
+    margin: 0; /* Imposta i margini del corpo a 0 */
+    padding: 0; /* Imposta il padding del corpo a 0 */
+    overflow: hidden; /* Nasconde l'overflow del contenuto */
+    background-color: #000; /* Colore nero di sfondo */
+    background-image: url('prova_10.jpg'); /* Immagine di sfondo */
+    background-size: cover; /* Per coprire tutto lo sfondo */
+    background-position: center; /* Per posizionare l'immagine al centro */
+    background-repeat: no-repeat; /* Per evitare la ripetizione dell'immagine */
+    font-family: 'Time new romans', sans-serif; /* Tipo di carattere del testo */
+}
+
+
+
+/* Barra di navigazione */
+.navbar {
+    background-color: #013220; /* Colore di sfondo della barra di navigazione */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera alla barra di navigazione */
+    display: flex; /* Rende la barra di navigazione un contenitore flessibile */
+    justify-content: space-between; /* Allinea gli elementi l'uno di fronte all'altro */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    padding: 10px; /* Aggiunto padding per separare gli elementie Grandezza della barra */
+}
+
+.navbar a { /* Si riferisce a tutti i tag <a> dentro navbar */
+    color: #f2f2f2; /* Colore del testo dei link nella barra di navigazione */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    padding: 14px 16px; /* Grandezza della barra */
+    transition: background-color 0.3s; /* Aggiunge una transizione al cambio di colore al passaggio del mouse */
+}
+
+.dropdown { /* Deve avere la classe "dropdown" come elemento padre. All'interno di questo elemento "dropdown" */
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px; /* Dimensione del testo del pulsante dropdown */
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: 'Time new romans', sans-serif;
+}
+
+.dropdown .dropbtn:hover { /* Deve avere la classe "dropdown" come elemento padre. All'interno di questo elemento "dropdown", ci deve essere un elemento con la classe "dropbtn". L'utente deve passare il mouse sopra questo elemento "dropbtn". */
+    transform: scale(1.1); /* Ingrandisce il pulsante dropdown del 10% */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn { /* .navbar a:hover: Questo si riferisce a tutti gli elementi <a> che sono all'interno di un elemento con la classe "navbar" e che sono al passaggio del mouse (hover). Invece, .dropdown:hover .dropbtn riguarda l'elemento con la classe "dropbtn" che si trova all'interno di un elemento con la classe "dropdown" quando l'utente passa il mouse sopra l'intero elemento "dropdown". */
+    background-color: #ddd; /* Cambia il colore di sfondo al passaggio del mouse */
+    color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Colore di sfondo del dropdown */
+    min-width: 160px; /* Larghezza minima del dropdown */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aggiunge un'ombra al dropdown */
+    z-index: 1;
+}
+
+.user-options a {
+    position: relative;
+    color: #fff; /* Colore del testo dei link */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+}
+
+.user-options a::before { /* LO USO PER CREARE LA LINEA SOTTO ACCEDI E REGISTRATI. BEFORE PERCHÉ APPARE SOTTO? */
+    content: ''; /* Aggiunge un elemento pseudoelemento prima del testo (in sostanza fa comparire la riga) */
+    display: block;
+    height: 2px; /* Altezza della barra */
+    width: 0;
+    background-color: #fff; /* Colore della barra */
+    position: absolute;
+    bottom: -5px; /* Posiziona la barra 5px sotto il testo */
+    left: 50%; /* Posiziona orizzontalmente al centro */
+    transform: translateX(-50%); /* Centra la barra sotto il testo */
+    transition: width 0.8s ease; /* Aumentato il tempo di transizione */
+}
+
+
+
+/* Animazione al passaggio del mouse x la riga */
+.user-options a:hover::before { /* Lo uso per regolare la lunghezza della riga sotto Accedi e Registrati */
+    width: 100%; /* Larghezza uguale alla lunghezza del testo */
+}
+
+.dropdown-content a {
+    float: none;
+    color: white; /* Colore del testo dei link nel dropdown */
+    padding: 12px 16px; /* Spaziatura interna dei link nel dropdown */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd; /* Cambia il colore di sfondo al passaggio del mouse sui link nel dropdown */
+    color: black; /* Cambia il colore del testo al passaggio del mouse sui link nel dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostra il contenuto del dropdown quando l'utente passa il mouse sopra l'elemento padre "dropdown" */
+}
+
+
+
+
+/* Header */
+.page {
+    text-align: center; /* Allinea il testo al centro della pagina */
+}
+
+.header {
+    background-color: #013220; /* Colore di sfondo dell'intestazione */
+    padding: 20px; /* Aggiunge spaziatura interna all'intestazione */
+    border-radius: 0 0 50% 50%; /* Aggiunge un bordo arrotondato all'intestazione */
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Tipo di carattere del titolo */
+    font-size: 36px; /* Dimensione del carattere del titolo */
+    line-height: 60px; /* Altezza della riga del titolo */
+    color: #ffffff; /* Colore del testo del titolo */
+    margin: 0; /* Rimuove i margini del titolo */
+    display: inline-block; /* Mostra il titolo come blocco inline */
+    transition: transform 0.3s ease; /* Aggiunge una transizione al cambio di trasformazione al passaggio del mouse */
+}
+
+.title:hover {
+    animation: wobble 0.5s ease-in-out infinite alternate; /* Aggiunge un'animazione al titolo al passaggio del mouse */
+}
+
+@keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+
+
+/* Immagini e descrizioni */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Allinea le immagini in colonna */
+    justify-content: flex-end; /* Allinea le immagini in basso */
+    align-items: center; /* Allinea le immagini al centro */
+    margin-top: 70px; /* Aggiunto spazio tra i bottoni e l'immagine */
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px; /* Aggiunge un bordo arrotondato all'immagine */
+    border: 2px solid #ccc; /* Aggiunge un bordo di 2px all'immagine */
+    width: 500px; /* Imposta la larghezza dell'immagine a 500px */
+    transition: transform 0.3s ease; /* Aggiunge una transizione alla trasformazione al passaggio del mouse */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.image:hover {
+    transform: scale(1.1) rotate(360deg); /* Ingrandisce l'immagine e la ruota di 360 gradi al passaggio del mouse */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Sfondo con opacità */
+    color: #fff; /* Colore del testo sopra l'overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Aggiunge una transizione all'opacità al passaggio del mouse */
+}
+
+.image:hover .overlay {
+    opacity: 1; /* Mostra l'overlay con opacità al passaggio del mouse sull'immagine */
+}
+
+.testo_immagine {
+    text-align: center; /* Allinea il testo al centro */
+    font-size: 25px; /* Dimensione del carattere del testo */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+}
+
+/* Pulsanti */
+.buttons {
+    margin-top: 50px; /* Altezza dei bottoni */
+}
+
+
+/* Definizione delle nuove animazioni keyframes */
+@keyframes rubberBand {
+    0% { transform: scale(1); }
+    30% { transform: scaleX(1.25) scaleY(0.75); }
+    40% { transform: scaleX(0.75) scaleY(1.25); }
+    50% { transform: scaleX(1.15) scaleY(0.85); }
+    65% { transform: scaleX(0.95) scaleY(1.05); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes flash {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* Pulsanti generici */
+button {
+    font-size: 20px; /* Dimensione del carattere nei pulsanti */
+    padding: 10px 20px; /* Spaziatura interna nei pulsanti */
+    margin: 5px; /* Margine esterno dei pulsanti */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    border: none; /* Rimuove il bordo dei pulsanti */
+    border-radius: 20px; /* Aggiunge un bordo arrotondato ai pulsanti */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Aggiunge una transizione alla trasformazione e al colore di sfondo al passaggio del mouse */
+}
+
+/* Applica le nuove animazioni ai pulsanti generici al passaggio del mouse */
+button:hover {
+    transform: scale(1.1); /* Ingrandisce i pulsanti al passaggio del mouse */
+    animation: rubberBand 1s, flash 1s; /* Applica le animazioni "rubberBand" e "flash" ai pulsanti al passaggio del mouse */
+}
+
+
+
+
+/* Classi specifiche per i pulsanti */
+.info-button:hover {
+    animation-name: rubberBand, flash; /* Applica le animazioni "rubberBand" e "flash" ai pulsanti con la classe "info-button" al passaggio del mouse */
+}
+
+.contact-button:hover {
+    animation-name: rubberBand, flash; /* Applica le animazioni "rubberBand" e "flash" ai pulsanti con la classe "contact-button" al passaggio del mouse */
+}
+
+.bottone1 {
+    background-color: #013220; /* Colore di sfondo per la classe "bottone1" */
+    margin-right: 100px; /* Aggiunge un margine destro di 100px alla classe "bottone1" */
+    color: #fff; /* Colore del testo per la classe "bottone1" */
+}
+
+.bottone2 {
+    background-color: #013220; /* Colore di sfondo per la classe "bottone2" */
+    margin-left: 100px; /* Aggiunge un margine sinistro di 100px alla classe "bottone2" */
+    color: #fff; /* Colore del testo per la classe "bottone2" */
+}
+

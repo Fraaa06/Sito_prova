@@ -1,0 +1,100 @@
+/* Stile di base per il corpo della pagina */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2; /* Colore di sfondo grigio chiaro */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente nel viewport */
+    align-items: center; /* Centra verticalmente nel viewport */
+    min-height: 100vh; /* Altezza minima del viewport */
+}
+
+/* Stile del contenitore di accesso */
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Effetto ombra */
+    text-align: center; /* Allinea il testo al centro */
+    width: 350px;
+}
+
+/* Stile per l'intestazione principale */
+h1 {
+    color: #333; /* Colore del testo scuro */
+}
+
+/* Stile del modulo di accesso */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Stile del contenitore degli input */
+.input-container {
+    max-width: 300px; /* Imposta una larghezza massima per il container */
+    margin: 10px auto; /* Per centrare il container nella pagina */
+}
+
+/* Stile per gli input di tipo testo e password */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Larghezza del 100% per occupare tutto lo spazio disponibile */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Stile per le etichette */
+label {
+    display: block; /* Rendi l'etichetta un blocco per farla andare a capo sotto l'input */
+    margin-bottom: 5px; /* Aggiunge uno spazio tra l'etichetta e l'input */
+}
+
+/* Stile del contenitore delle caselle di controllo (checkbox) */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Stile per le caselle di controllo */
+.checkbox-container input {
+    margin-right: 5px;
+}
+
+/* Stile del pulsante di accesso */
+button {
+    background-color: #4285f4; /* Colore del pulsante Google */
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Stile del pulsante al passaggio del mouse */
+button:hover {
+    background-color: #357ae8; /* Cambio di colore al passaggio del mouse */
+}
+
+/* Stile per i link alternativi */
+.alt-link {
+    color: #4285f4; /* Colore del link Google */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Stile per i link alternativi al passaggio del mouse */
+.alt-link a {
+    text-decoration: none;
+    color: #4285f4;
+}
+
+/* Stile per i link alternativi al passaggio del mouse con sottolineatura */
+.alt-link a:hover {
+    text-decoration: underline;
+}
